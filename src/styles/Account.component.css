@@ -1,0 +1,16 @@
+.twitterAccount {
+  width: 358px;
+  height: 100px;
+}
+.background {
+  border-radius: 8px;
+}
+
+.avatar {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.name {
+  color: #1df;
+}
