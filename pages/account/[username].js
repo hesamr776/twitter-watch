@@ -37,12 +37,12 @@ export default function Account() {
               onClick={() => setActiveTab(1)}
             />
           </Tabs>
-          {account.id && (
+          {account.username && (
             <Container>
               {activeTab === 0 ? (
-                <Audiences id={account.id} />
+                <Audiences username={account.username} />
               ) : (
-                <Tweets id={account.id} />
+                <Tweets username={account.username} />
               )}
             </Container>
           )}

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import styles from "@/src/styles/Audience.module.css";
 
-export default function Audience({ id, avatar }) {
+export default function Audience({ username, avatar }) {
   return (
     <div className={styles.audience}>
       <Image
@@ -14,7 +14,7 @@ export default function Audience({ id, avatar }) {
         priority
       />
 
-      <p className={styles.id}>@{id}</p>
+      <p className={styles.id}>@{username}</p>
     </div>
   );
 }

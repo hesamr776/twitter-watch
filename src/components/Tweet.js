@@ -6,7 +6,7 @@ export default function Tweet({ date, text, username, avatar, sentiment }) {
   return (
     <div className={sentiment ? styles.positiveTweet : styles.negativeTweet}>
       <Image
-        src={avatar}
+        src={`/${username}.jpg`}
         className={styles.avatar}
         alt="twitter account avatar"
         width={50}

@@ -16,18 +16,13 @@ export default function Home() {
         <p className={styles.header}>Select an Account</p>
         {isLoading && "..."}
         {data &&
-          data.map(({ id, name, avatar, background }) => (
+          data.map(({ username, name }) => (
             <a
-              key={id}
+              key={username}
               className={styles.twitterAccount}
-              href={`/account/${id}?name=${name}&avatar=${avatar}&background=${background}`}
+              href={`/account/${username}?name=${name}`}
             >
-              <TwitterAccount
-                id={id}
-                name={name}
-                avatar={avatar}
-                background={background}
-              />
+              <TwitterAccount username={username} name={name} />
             </a>
           ))}
       </main>

@@ -1,17 +1,21 @@
 import { useFetch } from "../hooks/useFetch";
 import Audience from "../components/Audience";
 
-export default function Audiences({ id }) {
-  const { data, isLoading } = useFetch("audience", id);
-  console.log(data, id);
+export default function Audiences({ username }) {
+  const { data, isLoading } = useFetch("audience", username);
+  console.log(data, username);
 
   return (
     <>
       {isLoading && "..."}
 
       {data &&
-        data.map(({ id, avatar }) => (
-          <Audience key={`audience_${id}`} id={id} avatar={avatar} />
+        data.map(({ username, avatar }) => (
+          <Audience
+            key={`audience_${username}`}
+            username={username}
+            avatar={avatar}
+          />
         ))}
     </>
   );

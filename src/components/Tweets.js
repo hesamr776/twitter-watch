@@ -1,9 +1,9 @@
 import { useFetch } from "../hooks/useFetch";
 import Tweet from "../components/Tweet";
 
-export default function Tweets({ id }) {
-  const { data, isLoading } = useFetch("tweets", id);
-  console.log(data, id);
+export default function Tweets({ username }) {
+  const { data, isLoading } = useFetch("tweets", username);
+  console.log(data, username);
 
   return (
     <>
@@ -12,12 +12,11 @@ export default function Tweets({ id }) {
       {data &&
         data.map(({ id, date, text, avatar, username, sentiment }) => (
           <Tweet
-            key={`tweets_${id}`}
-            id={id}
+            key={`tweets_${username}`}
+            username={username}
             date={date}
             text={text}
             avatar={avatar}
-            username={username}
             sentiment={sentiment}
           />
         ))}
