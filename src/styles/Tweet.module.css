@@ -1,0 +1,43 @@
+.positiveTweet {
+  width: 358px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(117, 228, 139);
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.negativeTweet {
+  width: 358px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  background-color: rgb(228, 117, 117);
+  padding: 8px 16px;
+  border-radius: 8px;
+
+  margin-bottom: 8px;
+}
+
+.avatar {
+  border-radius: 100%;
+  margin: 0 8px;
+}
+
+.username {
+  color: #000;
+  font-size: 16px;
+}
+
+.date {
+  color: #000;
+  font-size: 16px;
+}
+
+.text {
+  color: #000;
+  font-size: 16px;
+}
