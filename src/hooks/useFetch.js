@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 
-const productionBaseUrl =
-  "https://twitter-watch-vercel-flask-9601jdplp-hesamr776.vercel.app";
-const developmentBaseUrl = "http://localhost:3001";
+// const productionBaseUrl = "https://twitter-watch-vercel-flask.vercel.app";
+const productionBaseUrl = "https://twitter-watch-flask-mongodb.vercel.app";
+// const developmentBaseUrl = "http://localhost:3001";
+const developmentBaseUrl = "http://localhost:5001";
 
 const baseUrl =
   process.env.NODE_ENV === "development"
     ? developmentBaseUrl
     : productionBaseUrl;
 
-export const useFetch = (endpoint, id) => {
+export const useFetch = (endpoint, username) => {
   const [query, setQuery] = useState({
     isLoading: false,
     data: null,
@@ -28,10 +29,10 @@ export const useFetch = (endpoint, id) => {
             response = await fetch(`${baseUrl}/accounts`);
             break;
           case "tweets":
-            response = await fetch(`${baseUrl}/tweets/${id}`);
+            response = await fetch(`${baseUrl}/tweets/${username}`);
             break;
           case "audience":
-            response = await fetch(`${baseUrl}/audience/${id}`);
+            response = await fetch(`${baseUrl}/audience/${username}`);
             break;
 
           default:
