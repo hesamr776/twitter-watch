@@ -13,12 +13,8 @@ export default function Tweet({ date, text, username, avatar, sentiment }) {
         height={50}
         priority
       />
-
       <div>
-        <p className={styles.username}>
-          {username}
-          <span className={styles.date}> .{date}</span>
-        </p>
+        <p className={styles.date}>{new Date(date).toLocaleString()}</p>
 
         <p className={styles.text}>{text}</p>
       </div>
