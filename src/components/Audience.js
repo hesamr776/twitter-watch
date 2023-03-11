@@ -6,7 +6,7 @@ export default function Audience({ username, avatar }) {
   return (
     <div className={styles.audience}>
       <Image
-        src={avatar}
+        src={avatar || "/twitter-avatar.webp"}
         className={styles.avatar}
         alt="twitter account avatar"
         width={40}
