@@ -1,6 +1,7 @@
 import { useFetch } from "../hooks/useFetch";
 
 import styles from "@/src/styles/Sentiment.module.css";
+import { Fragment } from "react";
 
 export default function Sentiment({ username, tab }) {
   const { data, isLoading } = useFetch("sentiment", username);
@@ -13,7 +14,7 @@ export default function Sentiment({ username, tab }) {
           Object.keys(data).map((sentiment) =>
             (tab == 0 && !sentiment.includes("tweets")) ||
             (tab == 1 && sentiment.includes("tweets")) ? (
-              <div className={styles.sentiment}>
+              <div key={`sentiment_${sentiment}`} className={styles.sentiment}>
                 <p className={styles.text}>
                   {sentiment.split("_").join(" ")}:{" "}
                 </p>
@@ -21,7 +22,7 @@ export default function Sentiment({ username, tab }) {
                 <p className={styles.text}>{data[sentiment]}</p>
               </div>
             ) : (
-              <></>
+              <Fragment key={`sentiment_${sentiment}`}></Fragment>
             )
           )}
       </div>
