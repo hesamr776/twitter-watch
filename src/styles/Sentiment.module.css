@@ -1,0 +1,13 @@
+.sentiment {
+  width: 358px;
+  display: flex;
+  justify-content: "space-between";
+  align-items: "center";
+  flex-direction: "row";
+  padding: 8px 0;
+}
+
+.text {
+  color: #fff;
+  font-size: 16px;
+}

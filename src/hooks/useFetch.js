@@ -37,6 +37,9 @@ export const useFetch = (endpoint, username) => {
           case "replies":
             response = await fetch(`${baseUrl}/replies/${username}`);
             break;
+          case "sentiment":
+            response = await fetch(`${baseUrl}/sentiment/${username}`);
+            break;
 
           default:
             break;
