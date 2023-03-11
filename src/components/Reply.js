@@ -2,14 +2,11 @@ import Image from "next/image";
 
 import styles from "@/src/styles/Tweet.module.css";
 
-export default function Tweet({ date, text, username, id, sentiment }) {
+export default function Reply({ date, text, username, sentiment }) {
   return (
-    <a
-      className={sentiment ? styles.positiveTweet : styles.negativeTweet}
-      href={`/replies/${id}`}
-    >
+    <div className={sentiment ? styles.positiveTweet : styles.negativeTweet}>
       <Image
-        src={`/${username}.jpg`}
+        src={`/twitter-avatar.webp`}
         className={styles.avatar}
         alt="twitter account avatar"
         width={50}
@@ -21,6 +18,6 @@ export default function Tweet({ date, text, username, id, sentiment }) {
 
         <p className={styles.text}>{text}</p>
       </div>
-    </a>
+    </div>
   );
 }

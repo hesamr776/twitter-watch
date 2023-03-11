@@ -25,6 +25,8 @@
 .avatar {
   border-radius: 100%;
   margin: 0 8px;
+  min-width: 50px;
+  min-height: 50px;
 }
 
 .date {

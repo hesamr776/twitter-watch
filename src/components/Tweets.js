@@ -10,10 +10,11 @@ export default function Tweets({ username }) {
       {isLoading && "..."}
 
       {data &&
-        data.map(({ date, text, avatar, sentiment }) => (
+        data.map(({ date, text, avatar, sentiment, tweetId }) => (
           <Tweet
             key={`tweets_${username}`}
             username={username}
+            id={tweetId}
             date={date}
             text={text}
             avatar={avatar}
