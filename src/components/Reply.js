@@ -14,7 +14,13 @@ export default function Reply({ date, text, username, sentiment }) {
         priority
       />
       <div>
-        <p className={styles.date}>{new Date(date).toLocaleString()}</p>
+        <p className={styles.username}>
+          {username}
+          <span className={styles.date}>
+            {"  "}
+            {new Date(date).toLocaleString()}
+          </span>
+        </p>
 
         <p className={styles.text}>{text}</p>
       </div>
